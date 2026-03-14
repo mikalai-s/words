@@ -1,0 +1,75 @@
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.filter-chip {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-chip:hover {
+  border-color: var(--accent);
+}
+
+.filter-chip--active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.place-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.place-filter select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.place-filter-states {
+  display: flex;
+  gap: 4px;
+}
+
+.place-state-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.place-state-btn--active-used {
+  background: var(--success-bg);
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.place-state-btn--active-not_used {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.place-state-btn--active-unknown {
+  background: var(--warning-bg);
+  color: var(--warning);
+  border-color: var(--warning);
+}
