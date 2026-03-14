@@ -45,7 +45,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const currentUser = user ?? (await signInAnonymously(auth)).user
         await setDoc(doc(db, 'admins', currentUser.uid), { secret })
         setState({ isAdmin: true, loading: false, error: null })
-      } catch {
+      } catch (err) {
         sessionStorage.removeItem('admin_secret')
         setState({
           isAdmin: false,
