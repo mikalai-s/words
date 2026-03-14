@@ -1,0 +1,54 @@
+.place-usage-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+}
+
+.toggle-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.toggle--unknown .toggle-icon {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.toggle--used .toggle-icon {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.toggle--not-used .toggle-icon {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.toggle-name {
+  flex: 1;
+  font-size: 14px;
+}
+
+.toggle-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.toggle--used .toggle-label { color: var(--success); }
+.toggle--not-used .toggle-label { color: var(--danger); }
