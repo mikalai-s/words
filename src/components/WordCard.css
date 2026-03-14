@@ -1,0 +1,50 @@
+.word-card {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+  text-decoration: none;
+}
+
+.word-card:hover {
+  text-decoration: none;
+}
+
+.word-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.word-card-word {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.word-card-pos {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.word-card-meaning {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.word-card-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.word-card-place,
+.word-card-tag {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
