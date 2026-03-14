@@ -1,0 +1,75 @@
+.word-detail {
+  padding-bottom: 24px;
+}
+
+.back-link {
+  font-size: 14px;
+  color: var(--accent);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.word-detail-word {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.word-detail-pos {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.detail-section {
+  margin-top: 20px;
+}
+
+.detail-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.example-quote {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+  background: var(--bg-secondary);
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 6px;
+}
+
+.badge-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.detail-admin {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.edit-button {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.edit-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
