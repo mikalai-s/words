@@ -37,6 +37,29 @@ src/
 └── types/index.ts          — Word, Place, PlaceUsageMap, WordFormData
 ```
 
+## Setup on a New Machine
+
+```bash
+git clone git@github.com:mikalai-s/words.git
+cd words
+npm install                    # .npmrc ensures public registry is used
+cp .env.example .env.local     # Then fill in the values below
+npm run dev                    # http://localhost:5173
+```
+
+Fill in `.env.local` with Firebase web config values. Get them from:
+- Firebase Console → Project settings → Your apps → Web app → Config
+- Or run: `firebase apps:sdkconfig WEB --project words-3e257`
+
+**Admin access**: Open the app with `#admin=<secret>` in the URL. The secret is stored in `config/admin` document in Firestore (not in the repo).
+
+**Firebase CLI** (only needed for deploying security rules):
+```bash
+npm install -g firebase-tools
+firebase login
+firebase deploy --only firestore:rules
+```
+
 ## Development
 
 ```bash
@@ -44,8 +67,6 @@ npm run dev          # Local dev server
 npm test             # Run vitest
 npm run build        # Production build
 ```
-
-Requires `.env.local` with Firebase config (see `.env.example`). Firebase project: `words-3e257`.
 
 ## Deployment
 
