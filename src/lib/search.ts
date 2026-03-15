@@ -1,5 +1,7 @@
 import type { Word } from '../types'
 
+export const NO_PLACE_FILTER_ID = '__no_place__'
+
 export interface SearchFilters {
   query?: string
   tags?: string[]
@@ -26,11 +28,15 @@ export function filterWords(words: Word[], filters: SearchFilters): Word[] {
       if (!hasMatchingTag) return false
     }
     if (placeFilter) {
-      const usage = word.placeUsage[placeFilter.placeId]
-      if (placeFilter.state === 'unknown') {
-        if (usage !== undefined) return false
+      if (placeFilter.placeId === NO_PLACE_FILTER_ID) {
+        if (Object.keys(word.placeUsage).length > 0) return false
       } else {
-        if (usage !== placeFilter.state) return false
+        const usage = word.placeUsage[placeFilter.placeId]
+        if (placeFilter.state === 'unknown') {
+          if (usage !== undefined) return false
+        } else {
+          if (usage !== placeFilter.state) return false
+        }
       }
     }
     return true

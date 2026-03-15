@@ -1,4 +1,5 @@
 import type { Place } from '../types'
+import { NO_PLACE_FILTER_ID } from '../lib/search'
 import './FilterChips.css'
 
 type PlaceFilterState = 'used' | 'not_used' | 'unknown'
@@ -36,11 +37,12 @@ export function PlaceFilterChips({ places, filter, onChange }: Props) {
         }}
       >
         <option value="">📍 Фільтр па месцы</option>
+        <option value={NO_PLACE_FILTER_ID}>Без месца</option>
         {places.map((p) => (
           <option key={p.id} value={p.id}>{p.name}</option>
         ))}
       </select>
-      {filter && (
+      {filter && filter.placeId !== NO_PLACE_FILTER_ID && (
         <div className="place-filter-states">
           {(Object.keys(stateLabels) as PlaceFilterState[]).map((state) => (
             <button
