@@ -1,73 +1,31 @@
-# React + TypeScript + Vite
+# Слоўнік — дыялектны слоўнік беларускай мовы
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Вэб-дадатак для збору, пошуку і прагляду дыялектных слоў беларускай мовы, пачутых падчас штотыднёвых размоў з бацькамі.
 
-Currently, two official plugins are available:
+**Спасылка**: https://mikalai-s.github.io/words/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Пра што гэта?
 
-## React Compiler
+Шмат дыялектных слоў знікаюць разам са старэйшым пакаленнем. Гэты дадатак дапамагае захоўваць іх — запісваць словы, іх значэнні і ў якіх вёсках іх ужываюць.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Магчымасці
 
-## Expanding the ESLint configuration
+- Пошук і прагляд дыялектных слоў з беларускай сартыроўкай
+- Адсочванне ўжывання слоў па вёсках (тры станы: ужываецца / не ўжываецца / невядома)
+- Фільтрацыя па тэгах, месцах або словах без прывязкі да месца
+- Адмін-доступ праз сакрэтны хэш у URL — без экрана ўваходу
+- Аўтаматычная светлая/цёмная тэма паводле налад сістэмы
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Тэхналогіі
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+React + TypeScript + Vite, Firebase Firestore, GitHub Pages.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Распрацоўка
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env.local   # запоўніць Firebase канфігурацыю
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Падрабязней пра архітэктуру і рашэнні — у [CLAUDE.md](CLAUDE.md).
